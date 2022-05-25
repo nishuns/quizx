@@ -12,7 +12,9 @@
   </header>
 </template>
 <script>
-export default {};
+export default {
+  name: 'mast-head',
+};
 </script>
 <style lang="">
 </style>

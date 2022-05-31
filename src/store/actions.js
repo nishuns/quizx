@@ -20,9 +20,10 @@ export default {
       answers.push(element.userAnswer);
     });
     report.total_questions = data.length;
-    report.ans = answers.length;
+    report.answers = answers.length;
     report.correctAnswers = correctAnswers(data);
     report.percentage = Math.round((correctAnswers(data) / answers.length) * 100);
+    console.log('here', data, report);
     commit('SET_REPORTS', report);
   },
 };
@@ -31,9 +32,9 @@ const correctAnswers = (data) => {
   let counts;
   counts = 0;
   data.forEach((ans) => {
-    if (ans.r_ch === ans.userAnswer) {
+    if (ans[`ch${ans.r_ch}`]=== ans.userAnswer) {
       counts += 1;
     }
   });
-  return counts
+  return counts;
 };

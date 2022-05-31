@@ -114,10 +114,6 @@
 <script>
 export default {
   name: 'Play-view',
-  mounted() {
-    console.log('PARAMS', this.$route.params);
-    console.log(this.questions);
-  },
   data() {
     return {
       checked: [],
@@ -141,6 +137,10 @@ export default {
   methods: {
     printLogs() {
       console.log(this.questions);
+      this.$store.dispatch('saveReports', this.questions);
+      setTimeout(() => {
+        this.$router.push({ name: 'reports' });
+      }, 2000);
     },
   },
 };

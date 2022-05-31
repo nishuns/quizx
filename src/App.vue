@@ -5,6 +5,10 @@
 <script>
 export default {
   name: 'main-app',
+  mounted() {
+    this.$store.dispatch('fetchTitles');
+    this.$store.dispatch('fetchQuestions');
+  },
 };
 </script>
 

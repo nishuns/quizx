@@ -8,6 +8,11 @@ const routes = [
     component: HomeView,
   },
   {
+    path: '/play/:tag',
+    name: 'quiz',
+    component: () => import('../views/PlayView.vue'),
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting
